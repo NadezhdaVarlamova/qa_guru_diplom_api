@@ -8,7 +8,6 @@
 - [Отчеты](#bar_chart-отчеты-о-прохождении-тестов-доступны-в-allure)
 - - [Allure](#-allure)
 - - [Telegram](#-telegram)
-- [Видео с прогоном тестов](#movie_camera-видео-с-прогоном-тестов)
 - [Allure TestOps](#-проект-интегрирован-с-allure-testOps)
 
 ## :gear: В проекте используются следующие технологии и инструменты:
@@ -71,14 +70,6 @@ gradle clean test
 Настроена отправка оточета ботом в Telegram
 
 <img src="img/screen/Bot.jpg" alt="Telegram"/>
-
-## :movie_camera: Видео с прогоном тестов
-
-В отчетах Allure для каждого теста прикреплен не только скриншот, но и видео прохождения теста
-
-<p align="center">
-  <img title="Video" src="img/gif/test.gif">
-</p>
 
 ## Проект интегрирован с Allure TestOps
 <img width="3%" title="Allure" src="img/logo/Allure_TO.svg"> 
