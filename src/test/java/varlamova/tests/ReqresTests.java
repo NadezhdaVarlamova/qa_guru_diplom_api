@@ -8,11 +8,11 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static varlamova.spec.Spec.*;
 
-public class ReqresTests  extends TestBase{
+public class ReqresTests extends TestBase {
 
     @Test
     @DisplayName("Удаление пользователя")
-    void delete(){
+    void delete() {
         given()
                 .spec(request)
                 .when()
@@ -23,7 +23,7 @@ public class ReqresTests  extends TestBase{
 
     @Test
     @DisplayName("Обновление пользователя")
-    void update(){
+    void update() {
         User user = new User();
         user.setFirstName("nadya");
         user.setJob("qa");
@@ -42,7 +42,7 @@ public class ReqresTests  extends TestBase{
 
     @Test
     @DisplayName("Успешная регистрация пользователя")
-    void registerSuccessful(){
+    void registerSuccessful() {
         User user = new User();
         user.setEmail("eve.holt@reqres.in");
         user.setPassword("pistol");
@@ -61,7 +61,7 @@ public class ReqresTests  extends TestBase{
 
     @Test
     @DisplayName("Пользователь не найден")
-    void notFound(){
+    void notFound() {
         given()
                 .spec(request)
                 .when()
@@ -72,7 +72,7 @@ public class ReqresTests  extends TestBase{
 
     @Test
     @DisplayName("Неуспешная регистрация пользователя")
-    void registerUnsuccessful(){
+    void registerUnsuccessful() {
         User user = new User();
         user.setEmail("sydney@fife");
 
