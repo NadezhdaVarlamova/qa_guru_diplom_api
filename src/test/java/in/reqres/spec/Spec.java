@@ -1,4 +1,4 @@
-package varlamova.spec;
+package in.reqres.spec;
 
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;

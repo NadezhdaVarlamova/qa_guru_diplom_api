@@ -1,12 +1,12 @@
-package varlamova.tests;
+package in.reqres.tests;
 
+import in.reqres.models.User;
+import in.reqres.spec.Spec;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import varlamova.models.User;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static varlamova.spec.Spec.*;
 
 public class ReqresTests extends TestBase {
 
@@ -14,11 +14,11 @@ public class ReqresTests extends TestBase {
     @DisplayName("Удаление пользователя")
     void delete() {
         given()
-                .spec(request)
+                .spec(Spec.request)
                 .when()
                 .delete("/users/2")
                 .then()
-                .spec(response204);
+                .spec(Spec.response204);
     }
 
     @Test
@@ -29,12 +29,12 @@ public class ReqresTests extends TestBase {
         user.setJob("qa");
 
         User response = given()
-                .spec(request)
+                .spec(Spec.request)
                 .body(user)
                 .when()
                 .put("/users/2")
                 .then()
-                .spec(response200)
+                .spec(Spec.response200)
                 .extract().as(User.class);
         assertEquals(response.getJob(), user.getJob());
         assertEquals(response.getFirstName(), user.getFirstName());
@@ -48,12 +48,12 @@ public class ReqresTests extends TestBase {
         user.setPassword("pistol");
 
         User response = given()
-                .spec(request)
+                .spec(Spec.request)
                 .body(user)
                 .when()
                 .post("/register")
                 .then()
-                .spec(response200)
+                .spec(Spec.response200)
                 .extract().as(User.class);
         assertEquals(response.getId(), "4");
         assertEquals(response.getToken(), "QpwL5tke4Pnpja7X4");
@@ -63,11 +63,11 @@ public class ReqresTests extends TestBase {
     @DisplayName("Пользователь не найден")
     void notFound() {
         given()
-                .spec(request)
+                .spec(Spec.request)
                 .when()
                 .get("/unknown/23")
                 .then()
-                .spec(response404);
+                .spec(Spec.response404);
     }
 
     @Test
@@ -77,12 +77,12 @@ public class ReqresTests extends TestBase {
         user.setEmail("sydney@fife");
 
         User response = given()
-                .spec(request)
+                .spec(Spec.request)
                 .body(user)
                 .when()
                 .post("/register")
                 .then()
-                .spec(response400)
+                .spec(Spec.response400)
                 .extract().as(User.class);
         assertEquals(response.getError(), "Missing password");
 
