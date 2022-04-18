@@ -36,7 +36,7 @@
 > - Удаление пользователя;
 > - Запрос несуществующего пользователя.
 
-## <img width="4%" title="Jenkins" src="img/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/VarlamovaNadezhda_qa_guru_10_diplom_ui/)
+## <img width="4%" title="Jenkins" src="img/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/VarlamovaNadezhda_qa_guru_10_diplom_api/)
 
 Для запуска тестов из Jenkins:
 1. Необходимо нажать кнопку "Собрать сейчас".
